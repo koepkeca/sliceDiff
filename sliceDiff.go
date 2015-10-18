@@ -1,9 +1,9 @@
-// Use of this source code is governed by a BSD-style license
-// which can be found in the LICENSE file
 // Package sliceDiff provides functions to determine the difference
 // between two slices. There are tests and some benchmark utilities
 // THIS IS INTENDED ONLY FOR "SMALL" SLICES. Use on slices greater than
 // ~ 30k entries should not be used.
+// Use of this source code is governed by a BSD-style license
+// which can be found in the LICENSE file
 package sliceDiff
 
 // Int64SliceDiff returns the int64 values that are not in
