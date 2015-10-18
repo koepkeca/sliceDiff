@@ -4,7 +4,6 @@
 // between two slices. There are tests and some benchmark utilities
 // THIS IS INTENDED ONLY FOR "SMALL" SLICES. Use on slices greater than
 // ~ 30k entries should not be used.
-
 package sliceDiff
 
 // Int64SliceDiff returns the int64 values that are not in
@@ -55,7 +54,7 @@ func Int32SliceDiff(sliceOne []int32, sliceTwo []int32) []int32 {
 	return diff
 }
 
-// StringSliceDiff returns teh string values that are not in
+// StringSliceDiff returns the string values that are not in
 // both source slices
 func StringSliceDiff(sliceOne []string, sliceTwo []string) []string {
 	var diff []string
