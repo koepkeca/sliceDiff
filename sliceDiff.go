@@ -1,7 +1,10 @@
 // Package sliceDiff provides functions to determine the difference
 // between two slices. There are tests and some benchmark utilities
-// THIS IS INTENDED ONLY FOR "SMALL" SLICES. Use on slices greater than
-// ~ 30k entries should not be used.
+// THIS IS INTENDED ONLY FOR "SMALL" SLICES. 
+// Using this package on slices < 30,000 entries can get slow.. I would
+// suggest benchmarking the number / type of slices you intend to use
+// in sliceDiff_test.go *before* using on slices with a large number 
+// of entries.
 // Use of this source code is governed by a BSD-style license
 // which can be found in the LICENSE file
 package sliceDiff
