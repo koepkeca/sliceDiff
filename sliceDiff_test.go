@@ -2,6 +2,25 @@ package sliceDiff
 
 import "testing"
 
+const (
+	MSliceAMax = 256
+	MSliceAStep = 2
+	MSliceBMax = 768
+	MSliceBStep = 8
+	LSliceAMax = 4096
+	LSliceAStep = 2
+	LSliceBMax = 8192
+	LSliceBStep = 4
+	XLSliceAMax = 16384
+	XLSliceAStep = 2
+	XLSliceBMax = 7000
+	XLSliceBStep = 4
+	XXLSliceAMax = 32768
+	XXLSliceAStep = 4
+	XXLSliceBMax = 65535
+	XXLSliceBStep = 2
+)
+
 // GenerateInt64Slice generates random slices of int64's from 0 to s 
 // incrementing in incSize steps
 func GenerateInt64Slice(s int64, incSize int64) []int64 {
@@ -11,6 +30,31 @@ func GenerateInt64Slice(s int64, incSize int64) []int64 {
 		testSlice = append(testSlice,n)
 	}
 	return(testSlice)
+}
+
+func GenerateUint64Slice(s uint64, incSize uint64) []uint64 {
+	var n uint64
+	var testSlice []uint64
+	for n = 0; n < s; n += incSize {
+		testSlice = append(testSlice,n)
+	}
+	return(testSlice)
+}
+
+func BenchmarkUint64Diff_S(b *testing.B) {
+    testOne := []int64{1,2,3,4,5,6,7,8,9}
+    testTwo := []int64{1,2,3,5,6,7,8,10}
+    for i := 0; i < b.N; i++ {
+        Int64SliceDiff(testOne,testTwo)
+    }
+}
+
+func BenchmarkUint64Diff_M(b *testing.B) {
+    testOne := GenerateUint64Slice(MSliceAMax,MSliceAStep)
+	testTwo := GenerateUint64Slice(MSliceBMax,MSliceBStep)
+    for i := 0; i < b.N; i++ {
+        Uint64SliceDiff(testOne,testTwo)
+    }
 }
 
 func BenchmarkInt64Diff_XXL(b *testing.B) {
@@ -89,5 +133,24 @@ func TestInt32Diff_Basic(t *testing.T) {
 	if (diffLen != 2) {
 		t.Fatal("Basic Int32 Test failed.")
 	}
+}
+
+func TestUint32Diff_Basic(t *testing.T) {
+    testOne := []uint32 {120,35,228,67,9,0,32760}
+    testTwo := []uint32 {120,35,228,67,32760}
+    diff := Uint32SliceDiff(testOne,testTwo)
+    diffLen := len(diff)
+    if (diffLen != 2) {
+        t.Fatal("Basic Uint32 Test failed.")
+    }
+}
+func TestUInt64Diff_Basic(t *testing.T) {
+    testOne := []uint64 {120,35,228,67,9,0,32760}
+    testTwo := []uint64 {120,35,228,67,32760}
+    diff := Uint64SliceDiff(testOne,testTwo)
+    diffLen := len(diff)
+    if (diffLen != 2) {
+        t.Fatal("Basic Uint64 Test failed.")
+    }
 }
 
