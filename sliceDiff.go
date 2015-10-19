@@ -157,7 +157,7 @@ func Uint16SliceDiff(sliceOne []uint16, sliceTwo []uint16) []uint16 {
     return diff
 }
 
-// Int8SliceDiff returns the int16 values that are not in
+// Int8SliceDiff returns the int8 values that are not in
 // both soruce slices
 func Int8SliceDiff(sliceOne []int8, sliceTwo []int8) []int8 {
     var diff []int8
@@ -181,7 +181,7 @@ func Int8SliceDiff(sliceOne []int8, sliceTwo []int8) []int8 {
     return diff
 }
 
-// Uint8SliceDiff returns the uint16 values that are not in
+// Uint8SliceDiff returns the uint8 values that are not in
 // both soruce slices
 func Uint8SliceDiff(sliceOne []uint8, sliceTwo []uint8) []uint8 {
     var diff []uint8
