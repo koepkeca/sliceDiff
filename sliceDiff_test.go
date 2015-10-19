@@ -144,7 +144,8 @@ func TestUint32Diff_Basic(t *testing.T) {
         t.Fatal("Basic Uint32 Test failed.")
     }
 }
-func TestUInt64Diff_Basic(t *testing.T) {
+
+func TestUint64Diff_Basic(t *testing.T) {
     testOne := []uint64 {120,35,228,67,9,0,32760}
     testTwo := []uint64 {120,35,228,67,32760}
     diff := Uint64SliceDiff(testOne,testTwo)
@@ -153,4 +154,45 @@ func TestUInt64Diff_Basic(t *testing.T) {
         t.Fatal("Basic Uint64 Test failed.")
     }
 }
+
+func TestUint16_Basic(t *testing.T) {
+	testOne := []uint16 {2,4,6,7,8,10}
+	testTwo := []uint16 {2,4,6,8,10,13}
+	diff := Uint16SliceDiff(testOne,testTwo)
+	diffLen := len(diff)
+	if (diffLen != 2) {
+		t.Fatal("Basic Int16 Test failed.")
+	}
+}
+
+func TestInt16_Basic(t *testing.T) {
+    testOne := []int16 {2,4,6,7,8,10}
+    testTwo := []int16 {2,4,6,8,10,13}
+    diff := Int16SliceDiff(testOne,testTwo)
+    diffLen := len(diff)
+    if (diffLen != 2) {
+        t.Fatal("Basic Int16 Test failed.")
+    }
+}
+
+func TestUint8_Basic(t *testing.T) {
+    testOne := []uint8 {2,4,6,7,8,10}
+    testTwo := []uint8 {2,4,6,8,10,13}
+    diff := Uint8SliceDiff(testOne,testTwo)
+    diffLen := len(diff)
+    if (diffLen != 2) {
+        t.Fatal("Basic Uint8 Test failed.")
+    }
+}
+
+func TestInt8_Basic(t *testing.T) {
+    testOne := []int8 {2,4,6,7,8,10}
+    testTwo := []int8 {2,4,6,8,10,13}
+    diff := Int8SliceDiff(testOne,testTwo)
+    diffLen := len(diff)
+    if (diffLen != 2) {
+        t.Fatal("Basic Int8 Test failed.")
+    }
+}
+
 

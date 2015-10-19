@@ -36,7 +36,7 @@ func Int64SliceDiff(sliceOne []int64, sliceTwo []int64) []int64 {
 	return diff
 }
 
-// Uint64SliceDiff returns the int64 values that are not in
+// Uint64SliceDiff returns the uint64 values that are not in
 // both source slices
 func Uint64SliceDiff(sliceOne []uint64, sliceTwo []uint64) []uint64 {
     var diff []uint64
@@ -85,10 +85,106 @@ func Int32SliceDiff(sliceOne []int32, sliceTwo []int32) []int32 {
 	return diff
 }
 
-// Int32SliceDiff returns the int32 values that are not in
+// Uint32SliceDiff returns the uint32 values that are not in
 // both soruce slices
 func Uint32SliceDiff(sliceOne []uint32, sliceTwo []uint32) []uint32 {
     var diff []uint32
+    for i := 0; i < 2; i++ {
+        for _, s1 := range sliceOne {
+            found := false
+            for _, s2 := range sliceTwo {
+                if s1 == s2 {
+                    found = true
+                    break
+                }
+            }
+            if !found {
+                diff = append(diff,s1)
+            }
+        }
+        if i == 0 {
+            sliceOne, sliceTwo = sliceTwo, sliceOne
+        }
+    }
+    return diff
+}
+
+// Int16SliceDiff returns the int16 values that are not in
+// both soruce slices
+func Int16SliceDiff(sliceOne []int16, sliceTwo []int16) []int16 {
+    var diff []int16
+    for i := 0; i < 2; i++ {
+        for _, s1 := range sliceOne {
+            found := false
+            for _, s2 := range sliceTwo {
+                if s1 == s2 {
+                    found = true
+                    break
+                }
+            }
+            if !found {
+                diff = append(diff,s1)
+            }
+        }
+        if i == 0 {
+            sliceOne, sliceTwo = sliceTwo, sliceOne
+        }
+    }
+    return diff
+}
+
+// Uint16SliceDiff returns the uint16 values that are not in
+// both soruce slices
+func Uint16SliceDiff(sliceOne []uint16, sliceTwo []uint16) []uint16 {
+    var diff []uint16
+    for i := 0; i < 2; i++ {
+        for _, s1 := range sliceOne {
+            found := false
+            for _, s2 := range sliceTwo {
+                if s1 == s2 {
+                    found = true
+                    break
+                }
+            }
+            if !found {
+                diff = append(diff,s1)
+            }
+        }
+        if i == 0 {
+            sliceOne, sliceTwo = sliceTwo, sliceOne
+        }
+    }
+    return diff
+}
+
+// Int8SliceDiff returns the int16 values that are not in
+// both soruce slices
+func Int8SliceDiff(sliceOne []int8, sliceTwo []int8) []int8 {
+    var diff []int8
+    for i := 0; i < 2; i++ {
+        for _, s1 := range sliceOne {
+            found := false
+            for _, s2 := range sliceTwo {
+                if s1 == s2 {
+                    found = true
+                    break
+                }
+            }
+            if !found {
+                diff = append(diff,s1)
+            }
+        }
+        if i == 0 {
+            sliceOne, sliceTwo = sliceTwo, sliceOne
+        }
+    }
+    return diff
+}
+
+// Uint8SliceDiff returns the uint16 values that are not in
+// both soruce slices
+func Uint8SliceDiff(sliceOne []uint8, sliceTwo []uint8) []uint8 {
+    var diff []uint8
     for i := 0; i < 2; i++ {
         for _, s1 := range sliceOne {
             found := false
