@@ -194,3 +194,42 @@ func TestInt8_Basic(t *testing.T) {
 		t.Fatal("Basic Int8 Test failed.")
 	}
 }
+
+func TestFloat32_Basic(t *testing.T) {
+	testOne := []float32{2.0, 4.0, 6.0, 7.0, 8.0, 10.0}
+	testTwo := []float32{2.0, 4.0, 6.0, 8.0, 10.0, 13.75}
+	diff := Float32SliceDiff(testOne, testTwo)
+	diffLen := len(diff)
+	if diffLen != 2 {
+		t.Fatal("Basic Float32 Test failed.")
+	}
+}
+
+func TestFloat64_Basic(t *testing.T) {
+	testOne := []float64{2.0, 2.0, 4.0, 6.0, 7.0, 8.0, 10.0}
+	testTwo := []float64{2.0, 4.0, 6.0, 8.0, 10.0, 13.75}
+	diff := Float64SliceDiff(testOne, testTwo)
+	diffLen := len(diff)
+	if diffLen != 2 {
+		t.Fatal("Basic Float64 Test failed.")
+	}
+}
+
+func TestComplex64_Basic(t *testing.T) {
+	testOne := []complex64{2.0 + 4i, 4.0, 6.0, 7.0, 8.0, 10.0}
+	testTwo := []complex64{2.0 + 4i, 4.0, 6.0, 8.0, 10.0, 13.75}
+	diff := Complex64SliceDiff(testOne, testTwo)
+	diffLen := len(diff)
+	if diffLen != 2 {
+		t.Fatal("Basic Complex 64 Test failed.")
+	}
+}
+func TestComplex128_Basic(t *testing.T) {
+	testOne := []complex128{2.0, 2.0, 4.0, 6.0, 7.0, 8.0, 10.0}
+	testTwo := []complex128{2.0, 4.0, 6.0, 8.0, 10.0, 13.75}
+	diff := Complex128SliceDiff(testOne, testTwo)
+	diffLen := len(diff)
+	if diffLen != 2 {
+		t.Fatal("Basic Complex 128 Test failed.")
+	}
+}

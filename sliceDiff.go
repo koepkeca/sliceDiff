@@ -204,6 +204,102 @@ func Uint8SliceDiff(sliceOne []uint8, sliceTwo []uint8) []uint8 {
 	return diff
 }
 
+// Float32SliceDiff returns the float32 values that are not in
+// both soruce slices
+func Float32SliceDiff(sliceOne []float32, sliceTwo []float32) []float32 {
+	var diff []float32
+	for i := 0; i < 2; i++ {
+		for _, s1 := range sliceOne {
+			found := false
+			for _, s2 := range sliceTwo {
+				if s1 == s2 {
+					found = true
+					break
+				}
+			}
+			if !found {
+				diff = append(diff, s1)
+			}
+		}
+		if i == 0 {
+			sliceOne, sliceTwo = sliceTwo, sliceOne
+		}
+	}
+	return diff
+}
+
+// Float64SliceDiff returns the float64 values that are not in
+// both soruce slices
+func Float64SliceDiff(sliceOne []float64, sliceTwo []float64) []float64 {
+	var diff []float64
+	for i := 0; i < 2; i++ {
+		for _, s1 := range sliceOne {
+			found := false
+			for _, s2 := range sliceTwo {
+				if s1 == s2 {
+					found = true
+					break
+				}
+			}
+			if !found {
+				diff = append(diff, s1)
+			}
+		}
+		if i == 0 {
+			sliceOne, sliceTwo = sliceTwo, sliceOne
+		}
+	}
+	return diff
+}
+
+// Complex64SliceDiff returns the complex64 values that are not in
+// both soruce slices
+func Complex64SliceDiff(sliceOne []complex64, sliceTwo []complex64) []complex64 {
+	var diff []complex64
+	for i := 0; i < 2; i++ {
+		for _, s1 := range sliceOne {
+			found := false
+			for _, s2 := range sliceTwo {
+				if s1 == s2 {
+					found = true
+					break
+				}
+			}
+			if !found {
+				diff = append(diff, s1)
+			}
+		}
+		if i == 0 {
+			sliceOne, sliceTwo = sliceTwo, sliceOne
+		}
+	}
+	return diff
+}
+
+// Complex128SliceDiff returns the complex128 values that are not in
+// both soruce slices
+func Complex128SliceDiff(sliceOne []complex128, sliceTwo []complex128) []complex128 {
+	var diff []complex128
+	for i := 0; i < 2; i++ {
+		for _, s1 := range sliceOne {
+			found := false
+			for _, s2 := range sliceTwo {
+				if s1 == s2 {
+					found = true
+					break
+				}
+			}
+			if !found {
+				diff = append(diff, s1)
+			}
+		}
+		if i == 0 {
+			sliceOne, sliceTwo = sliceTwo, sliceOne
+		}
+	}
+	return diff
+}
+
 // StringSliceDiff returns the string values that are not in
 // both source slices
 func StringSliceDiff(sliceOne []string, sliceTwo []string) []string {

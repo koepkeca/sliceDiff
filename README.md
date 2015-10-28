@@ -35,13 +35,11 @@ int8 | yes | yes | no
 int16 | yes | yes | no
 int32 | yes | yes | partial
 int64 | yes | yes | yes
-float32 | no | no | no
-float64 | no | no | no
-complex64* | no | no | no
-complex128* | no | no | no
+float32 | yes | yes | no
+float64 | yes | yes | no
+complex64 | yes | yes | no
+complex128 | yes | yes | no
 byte | no | no | no
 rune | no | no | no
 string | yes | yes | partial
-
-*These may or not ever be implemented
 
