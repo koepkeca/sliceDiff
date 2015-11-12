@@ -24,7 +24,9 @@ This library is not intended for massive slices. You can modify the benchmarking
 
 ## Currently Implemented Types
 ** The Idea is to eventually implement all of the following: **
+
 <a name="types"></a>
+
 Basic Type | Current Implementation Status | Unit Test Status | Benchmark Status
 -----------|-------------------------------|------------------|-------------------
 uint8 | yes | yes | no
