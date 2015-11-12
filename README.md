@@ -8,7 +8,7 @@ SliceDiff is a [go] (http://www.golang.org)  library to find the difference betw
 
 ## Library Status
 
-This library is still under developemnt. The functions Int32SliceDiff, Int64SliceDiff, and StringSliceDiff are fully functional and have testing / benchmarking libraries
+This library is still under development. Function names will **not** change so you can feel free to use this for testing / production. [You can view the currently implemented primitive types here.] (#types)  I will add expanded benchmark tests as time permits.
 
 ## Notes on DRY, Interfaces and Generics in Go
 
@@ -24,7 +24,7 @@ This library is not intended for massive slices. You can modify the benchmarking
 
 ## Currently Implemented Types
 ** The Idea is to eventually implement all of the following: **
-
+<a name="types"></a>
 Basic Type | Current Implementation Status | Unit Test Status | Benchmark Status
 -----------|-------------------------------|------------------|-------------------
 uint8 | yes | yes | no
@@ -42,4 +42,3 @@ complex128 | yes | yes | no
 byte | no | no | no
 rune | no | no | no
 string | yes | yes | partial
-
