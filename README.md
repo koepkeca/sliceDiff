@@ -12,7 +12,7 @@ This library is still under development. Function names will **not** change so y
 
 ## Notes on DRY, Interfaces and Generics in Go
 
-I do understand that this library violates the DRY principle, however, after researching reflect, go generate and interfaces, it still seems to be the best option to just hammer thesee out. 
+I do understand that this library violates the DRY principle, however, after researching reflect, go generate and interfaces, it still seems to be the best option to just hammer these out. 
 I wanted to have a generic function that accepted an interface but the issue of the return type was still a problem.
 ## Installation
 
@@ -22,10 +22,9 @@ go get gtihub.com/koepkeca/sliceDiff
 
 This library is not intended for massive slices. You can modify the benchmarking files located in sliceDiff_test.go to see how long operations take with this implementation. I personally wouldn't use it for any slices containing more than 30,000 elements.
 
-## Currently Implemented Types
-** The Idea is to eventually implement all of the following: **
+## Currently Implemented Type [types] ##
 
-<a name="types"></a>
+** The Idea is to eventually implement all of the following: **
 
 Basic Type | Current Implementation Status | Unit Test Status | Benchmark Status
 -----------|-------------------------------|------------------|-------------------
